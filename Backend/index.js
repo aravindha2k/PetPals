@@ -1,9 +1,13 @@
 const express = require("express");
 const connectDb = require("./config/connectDb");
 const { userModel } = require("./AllSchema/userSchema");
+const { petRouter } = require("./Routes/petRouter");
 const app = express();
 require("dotenv").config();
+
 app.use(express.json());
+app.use("/pet", petRouter)
+
 app.get("/", (req, res) => {
   res.send("Getting");
 });
