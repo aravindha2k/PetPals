@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDb = require("./config/connectDb");
-const { userModel } = require("./AllSchema/userSchema");
+const userRouter = require("./Routes/userRouter");
+const { serviceRouter } = require("./Routes/serviceRouter");
 const { petRouter } = require("./Routes/petRouter");
 const app = express();
 require("dotenv").config();
@@ -8,20 +9,17 @@ require("dotenv").config();
 app.use(express.json());
 app.use("/pet", petRouter)
 
+
+
 app.get("/", (req, res) => {
-  res.send("Getting");
+  res.send("this is home");
 });
 
-app.post("/signup", async (req, res) => {
-  try {
-    const user = new userModel(req.body);
-    user.save();
-    res.status(200).send(user);
-  } catch (err) {
-    console.log(err);
-    res.status(401).send("Error");
-  }
-});
+app.use("/user",userRouter)
+app.use("/service",serviceRouter)
+
+
+
 app.listen(process.env.PORT, async () => {
   console.log(`Server is running at ${process.env.PORT}`);
   await connectDb();
