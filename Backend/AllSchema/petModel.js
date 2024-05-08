@@ -9,7 +9,8 @@ const petSchema = new mongoose.Schema({
     personality: String,
     favorite_activities: Array,
     special_needs: String
-})
+},{versionKey:false}
+)
 
 const petModel = mongoose.model("pet", petSchema)
 

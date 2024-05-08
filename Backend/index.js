@@ -7,15 +7,13 @@ const app = express();
 require("dotenv").config();
 
 app.use(express.json());
-app.use("/pet", petRouter)
-
-
 
 app.get("/", (req, res) => {
   res.send("this is home");
 });
 
 app.use("/user",userRouter)
+app.use("/pet", petRouter)
 app.use("/service",serviceRouter)
 
 
