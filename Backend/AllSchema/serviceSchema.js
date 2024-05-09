@@ -8,6 +8,8 @@ const serviceSchema = new mongoose.Schema({
     serviceCategory: [String], // Categories like grooming, walking, training, etc.
 
 });
+},{versionKey:false}
+);
 
 const serviceModel = mongoose.model("Service", serviceSchema);
 
