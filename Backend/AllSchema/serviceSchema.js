@@ -6,6 +6,8 @@ const serviceSchema = new mongoose.Schema({
     servicePrice: Number,
     serviceImg: String,
     serviceCategory: [String], // Categories like grooming, walking, training, etc.
+
+});
 },{versionKey:false}
 );
 
