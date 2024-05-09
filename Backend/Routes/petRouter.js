@@ -7,7 +7,17 @@ petRouter.post("/create", async(req,res)=>{
     try {
         const pet = new petModel(req.body)
         const savedpet = await pet.save()
-        res.status(200).json({error:false, msg:"pet profile created successfully", data:savedpet})
+        res.status(200).json({error:false, msg:"pet added  successfully", data:savedpet})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error:true, msg:error})
+    }
+})
+
+petRouter.post("/insertmany", async(req,res)=>{
+    try {
+        const savedpet = await petModel.insertMany(req.body)
+        res.status(200).json({error:false, msg:"pet added successfully", data:savedpet})
     } catch (error) {
         console.error(error);
         res.status(500).json({error:true, msg:error})
