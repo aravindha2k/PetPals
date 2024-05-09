@@ -5,7 +5,7 @@ const serviceSchema = new mongoose.Schema({
     serviceDescription: String,
     servicePrice: Number,
     serviceImg: String,
-    serviceCategory: [String], // Categories like grooming, walking, training, etc.
+    serviceCategory: [String] // Categories like grooming, walking, training, etc.
 });
 
 const serviceModel = mongoose.model("Service", serviceSchema);
