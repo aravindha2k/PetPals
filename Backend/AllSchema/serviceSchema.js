@@ -6,11 +6,7 @@ const serviceSchema = new mongoose.Schema({
     servicePrice: Number,
     serviceImg: String,
     serviceCategory: [String], // Categories like grooming, walking, training, etc.
-    reviews: [{
-        username: String,
-        rating: Number,
-        comment: String
-    }]
+
 });
 
 const serviceModel = mongoose.model("Service", serviceSchema);
