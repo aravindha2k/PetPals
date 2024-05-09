@@ -24,6 +24,34 @@ petRouter.get("/data", async(req,res)=>{
     }
 })
 
+petRouter.patch("/update/:id", async(req,res)=>{
+    // console.log(req.params);
+    try {
+        const updatedPet = await petModel.findByIdAndUpdate({_id: req.params.id}, req.body, {new:true})
+        if(!updatedPet){
+            return res.status(404).json({error:true, msg:"pet not found"})
+        }
+        res.status(200).json({error:false, msg:"pet data updated successfully", data: updatedPet})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error: true, msg: error})
+    }
+})
+
+petRouter.delete("/delete/:id", async(req,res)=>{
+    try {
+        const deletedPet = await petModel.findByIdAndDelete({_id: req.params.id})
+        console.log(deletedPet);
+        if(!deletedPet){
+            return res.status(404).json({error:true, msg:"pet not found"})
+        }
+        res.status(200).json({error:false, msg:"pet data deleted successfully", data: deletedPet})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error: true, msg: error})
+    }
+})
+
 module.exports={
     petRouter
 }
