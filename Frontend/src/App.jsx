@@ -1,10 +1,8 @@
-
-
-import AllRoutes from '../AllRoutes/AllRoutes'
-import Auth from '../Authentication/Auth'
+import AllRoutes from './Components/AllRoutes/AllRoutes'
+import Auth from './Components/Auth'
 
 import './App.css'
-import Navbar from './Navbar/Navbar'
+import Navbar from './Components/AllRoutes/Navbar'
 
 
 function App() {
@@ -14,7 +12,7 @@ function App() {
     <>
       
     <Navbar />
-    <AllRoutes />
+    <AllRoutes/>
     <Auth />
   
     </>
