@@ -1,12 +1,15 @@
-
-import "tailwindcss/tailwind.css"
+import "tailwindcss/tailwind.css";
 const Auth = () => {
   return (
     <div className="py-6">
       <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div
           className="hidden lg:block lg:w-1/2 bg-cover"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')" }}        ></div>
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')",
+          }}
+        ></div>
         <div className="w-full p-8 lg:w-1/2">
           <h2 className="text-2xl font-semibold text-gray-700 text-center">
             Brand
@@ -36,15 +39,10 @@ const Auth = () => {
                 />
               </svg>
             </div>
-            <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">
-              Sign in with Google
-            </h1>
           </a>
           <div className="mt-4 flex items-center justify-between">
             <span className="border-b w-1/5 lg:w-1/4"></span>
-            <a href="#" className="text-xs text-center text-gray-500 uppercase">
-              or login with email
-            </a>
+
             <span className="border-b w-1/5 lg:w-1/4"></span>
           </div>
           <div className="mt-4">
