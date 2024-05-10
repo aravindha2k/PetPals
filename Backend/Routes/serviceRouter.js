@@ -1,5 +1,6 @@
 const { serviceModel } = require("../AllSchema/serviceSchema");
 const express = require("express");
+const { auth } = require("../middlewares/auth.middleware");
 const serviceRouter = express.Router();
 
 // Create a new service
