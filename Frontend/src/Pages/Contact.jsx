@@ -1,9 +1,11 @@
 import React from 'react'
+import Auth from '../Components/Auth'
 
 const Contact = () => {
   return (
     <div>
-      Contact Page
+  
+      <Auth />
     </div>
   )
 }
