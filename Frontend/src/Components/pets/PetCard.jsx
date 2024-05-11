@@ -1,6 +1,7 @@
-import { Box, Card, Center, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBagShopping, faCartShopping, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
 
 const petCard = ({pet, truncateDescription}) => {
   return (
@@ -30,7 +31,7 @@ const petCard = ({pet, truncateDescription}) => {
             <Text fontSize={{ base: "xs", sm: "sm", md: "md" }} mt={2}>
               {truncateDescription(pet.about)}
             </Text>
-            <Center mt={2}>
+            {/* <Center mt={2}>
               {[...Array(4)].map((_, index) => (
                 <FontAwesomeIcon
                   key={index}
@@ -42,7 +43,7 @@ const petCard = ({pet, truncateDescription}) => {
                 icon={faStarHalfAlt}
                 style={{ color: "#FFD43B" }}
               />
-            </Center>
+            </Center> */}
             <Flex
               direction="column"
               alignItems="center"
@@ -63,7 +64,13 @@ const petCard = ({pet, truncateDescription}) => {
                 mt={{ base: 2, sm: 0 }}
                 textAlign={{ base: "center", sm: "right" }}
               >
-                Gender: {pet.age}
+                Gender: {pet.gender}
+              </Text>
+              <Text
+                mt={{ base: 2, sm: 0 }}
+                textAlign={{ base: "center", sm: "right" }}
+              >
+                Age: {pet.age}
               </Text>
             </Flex>
           </Box>
@@ -78,7 +85,7 @@ const petCard = ({pet, truncateDescription}) => {
             <Button
               colorScheme="aliceblue"
               color = "black"
-              bgColor={"yellow.500"}
+              bgColor={"blue.500"}
               _hover={{bgColor : "yellow.600", color : "aliceblue"}}
               border = {"1px solid yellowgreen"}
               flex={{ base: "100%", sm: "1" }}
@@ -86,7 +93,8 @@ const petCard = ({pet, truncateDescription}) => {
               p={{ base: "none", sm: 3 }}
               // onClick={handleCart}
             >
-              <FontAwesomeIcon icon={faCartShopping} style={{color: "#FFD43B", marginRight : "5px"}} />  Add to Cart
+              {/* <FontAwesomeIcon  style={{color: "#FFD43B", marginRight : "5px"}} />  */}
+               View More
             </Button>
             <Button
               colorScheme="aliceblue"
@@ -98,7 +106,8 @@ const petCard = ({pet, truncateDescription}) => {
               p={{ base: "none", sm: 3 }}
               // onClick={handleBuy}
             >
-              <FontAwesomeIcon icon={faBagShopping} style={{color: "#63E6BE", marginRight : "5px"}} /> Buy Now
+              {/* <FontAwesomeIcon  style={{color: "#63E6BE", marginRight : "5px"}} />  */}
+              Adpot Pet
             </Button>
           </Flex>
         </Flex>
