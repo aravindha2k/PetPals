@@ -6,7 +6,7 @@ const initialPetState = {
     error: "",
 }
 
-const petReducer = (state=initialPetState, action)=>{
+export const petReducer = (state=initialPetState, action)=>{
     switch (action.type) {
         case FETCH_PETS_REQUEST:
             return{
