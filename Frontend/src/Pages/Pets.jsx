@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
+import { Box } from '@chakra-ui/react'
 
 const Pets = () => {
   const[pets, setPets] = useState([])
