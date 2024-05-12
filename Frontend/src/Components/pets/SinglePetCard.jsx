@@ -15,7 +15,7 @@ const SinglePetCard = () => {
     }, []);
 
     const handleAdoptClick = ()=>{
-
+        
     }
 
     if (error) {

@@ -19,7 +19,7 @@ const PetsList = ()=>{
   const per_page = 6
   const MAX_DESCRIPTION_LENGTH = 40;
 
-  console.log(filters);
+  // console.log(filters);
   useEffect(()=>{
     dispatch(fetchPets (filters))
   },[dispatch, filters])
@@ -83,6 +83,31 @@ const PetsList = ()=>{
     <>
     <div className='petsContainer'>
       <div className='filterSection'>
+        <div className="filter-item">
+            <p>Species</p>
+            <div className="filter-in">
+              <label>
+                <input type="checkbox" checked={filters.species === 'dog'} onChange={() => handleSpeciesChange('dog')} />
+                Dogs
+              </label>
+              <br />
+              <label>
+                <input type="checkbox" checked={filters.species === 'cat'} onChange={() => handleSpeciesChange('cat')} />
+                Cats
+              </label>
+              <br />
+              <label>
+                <input type="checkbox" checked={filters.species === 'rabbit'} onChange={() => handleSpeciesChange('rabbit')} />
+                Rabbits
+              </label>
+              <br />
+              <label>
+                <input type="checkbox" checked={filters.species === 'bird'} onChange={() => handleSpeciesChange('bird')} />
+                Birds
+              </label>
+            </div>
+          </div>
+          <div className="hr"></div>
           <div className="filter-item">
             <p>Gender</p>
             <div className="filter-in">
@@ -139,37 +164,11 @@ const PetsList = ()=>{
           </div>
           <div className="hr"></div>
           <div className="filter-item">
-            <p>Species</p>
-            <div className="filter-in">
-              <label>
-                <input type="checkbox" checked={filters.species === 'dog'} onChange={() => handleSpeciesChange('dog')} />
-                Dogs
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" checked={filters.species === 'cat'} onChange={() => handleSpeciesChange('cat')} />
-                Cats
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" checked={filters.species === 'rabbit'} onChange={() => handleSpeciesChange('rabbit')} />
-                Rabbits
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" checked={filters.species === 'bird'} onChange={() => handleSpeciesChange('bird')} />
-                Birds
-              </label>
-            </div>
-          </div>
-          <div className="hr"></div>
-          <div className="filter-item">
             <button onClick={handlefilterReset}>Reset Filter</button>
           </div>
         </div>
       <div className='petsListSection' >
         <Flex mt="4" justifyContent="center">
-            <Text fontSize={{ base: 'sm', sm: 'md', md: 'lg', lg: 'xl'}} p={1} fontWeight="bold">Pages : </Text>
             {Array.from(
               { length: Math.ceil(pets.length / per_page) },
               (_, index) => (

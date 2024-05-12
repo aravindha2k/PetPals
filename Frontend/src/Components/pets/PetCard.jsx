@@ -94,7 +94,7 @@ const petCard = ({pet, truncateDescription}) => {
               p={{ base: "none", sm: 3 }}
               // onClick={handleBuy}
             >
-              Adpot Pet
+            Adopt Pet
             </Button>
           </Flex>
         </Flex>

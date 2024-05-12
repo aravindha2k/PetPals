@@ -6,11 +6,10 @@
 }
 
 .filterSection{
-    width: 30%;
+    width: 20%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
     padding: 1%;
-    width: 25%;
     height: fit-content;
 }
 
@@ -19,7 +18,7 @@
 }
 
 .hr {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.258);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.258);
 }
 
 .filter-item {
@@ -45,3 +44,21 @@
     margin-left: 10%;
     margin-right: 5%;
 }
+
+@media screen and (min-width: 380px) and (max-width: 575px) {
+    .filter-item>p{
+        font-size: medium;
+    }
+    .filter-in>label{
+        font-size: small;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .filter-item>p{
+        font-size: medium;
+    }
+    .filter-in>label{
+        font-size: smaller;
+    }
+  }
