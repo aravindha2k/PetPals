@@ -25,8 +25,35 @@ petRouter.post("/insertmany", async(req,res)=>{
 })
 
 petRouter.get("/data", async(req,res)=>{
+    // console.log(req.query);
+    const { q, gender, age, color, sortBy, breed, sortOrder, page, limit, species } = req.query
+
+    const filter = {}
+
+    // if (q) {
+    //     filter.$or = [
+    //         { gender: { $regex: q, $options: "i" } },
+    //         { color: { $regex: q, $options: "i" } },
+    //     ];
+    // }
+
+    if (gender) {
+        filter.gender = gender;
+    }        
+    if (age) {
+        filter.age = age;
+    }
+    if (color) {
+        filter.color = { $in: color };
+    }
+    if (species) {
+        filter.species = { $regex: species, $options: "i" };
+    }
+    
     try {
-        const pets = await petModel.find();
+        // console.log(req.query);
+        // console.log(filter);
+        const pets = await petModel.find(filter);
         res.status(200).json({error:false, data:pets})
     } catch (error) {
         console.error(error);
