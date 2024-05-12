@@ -34,6 +34,19 @@ petRouter.get("/data", async(req,res)=>{
     }
 })
 
+petRouter.get("/data/:id", async(req,res)=>{
+    try {
+        const singlePet = await petModel.find({_id: req.params.id});
+        if(!singlePet){
+            return res.status(404).json({error:true, msg:"pet not found"})
+        }
+        res.status(200).json({error:false, data:singlePet})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error:true, msg:error})
+    }
+})
+
 petRouter.patch("/update/:id", async(req,res)=>{
     // console.log(req.params);
     try {

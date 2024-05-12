@@ -1,9 +1,16 @@
 import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBagShopping, faCartShopping, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
 
 const petCard = ({pet, truncateDescription}) => {
+  const navigate = useNavigate()
+
+  const handlePetClick = ()=>{
+    navigate(`/pets/${pet._id}`)
+  }
+
   return (
     <Box
       width={{ base: "100%", sm: "43%", md: "47%", lg: "31%" }}
@@ -17,13 +24,13 @@ const petCard = ({pet, truncateDescription}) => {
             src={pet.image}
             height="130px"
             objectFit="contain"
-            // onClick={handleProductClick}
+            onClick={handlePetClick}
           />
           <Box p={2}>
             <Center>
               <Heading
                 fontSize={{ base: "sm", sm: "md", md: "lg" }}
-                // onClick={handleProductClick}
+                onClick={handlePetClick}
               >
                 {pet.name}
               </Heading>
@@ -36,11 +43,6 @@ const petCard = ({pet, truncateDescription}) => {
               alignItems="center"
               justifyContent="space-between"
             >
-              <Text mt={2} color="blue.500">
-                {" "}
-                <span>&#36; </span>
-                {pet.price}
-              </Text>
               <Text
                 mt={{ base: 2, sm: 1 }}
                 textAlign={{ base: "center", sm: "left" }}
@@ -70,15 +72,15 @@ const petCard = ({pet, truncateDescription}) => {
             flexWrap="wrap"
           >
             <Button
-              colorScheme="aliceblue"
+              colorScheme="blue"
               color = "black"
-              bgColor={"blue.500"}
-              _hover={{bgColor : "blue.600", color : "aliceblue"}}
+              // bgColor={"blue.500"}
+              _hover={{bgColor : "blue.700", color : "aliceblue"}}
               border = {"1px solid yellowgreen"}
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
-              // onClick={handleCart}
+               onClick={handlePetClick}
             >
                View More
             </Button>

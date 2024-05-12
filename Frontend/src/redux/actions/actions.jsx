@@ -18,5 +18,23 @@ export const fetchPets = () => async(dispatch)=>{
     }
 }
 
+export const fetchSinglePets = (id) => async(dispatch)=>{
+    try {
+        dispatch({type: FETCH_PETS_REQUEST})
+        const res = await axios.get(`http://localhost:3000/pet/data/${id}`)
+        // console.log(res);
+        dispatch({
+            type: FETCH_PETS_SUCCESS, 
+            payload: res.data.data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: FETCH_PETS_FAILURE,
+            payload: "Error Fetching Pets"
+        })
+    }
+}
+
 
 
