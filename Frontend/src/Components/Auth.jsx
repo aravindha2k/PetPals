@@ -33,26 +33,32 @@ export default function Auth() {
         .catch((err) => alert(err));
     } else {
       fetch("http://localhost:3000/user/login", {
-        headers:{
-          "Content-Type":"application/json"
-        },
         method: "POST",
-        body: JSON.stringify({ email, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password:password,
+        }),
       })
-        .then((res) => res.json())
         .then((res) => {
-          if (res.error) {
-            throw new Error(res.error);
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Login failed");
           }
-          return res;
         })
+        .then((data) => {
+          const token = data.token;
 
-        .then(() => {
+          localStorage.setItem("token", token);
+          console.log("Token:", token);
           navigate("/");
-         console.log("success")
         })
-
-        .catch((err) => alert(err))
+        .catch((err) => {
+          console.error("Fetch error:", err);
+        });
        
     }
   };
@@ -64,13 +70,13 @@ export default function Auth() {
           className="hidden lg:block lg:w-1/2 bg-cover"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1546514714-df0ccc50d7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80')",
+              "url('https://i.pinimg.com/736x/78/b2/42/78b242b1bcf68effce060e0727d52c9b--melon-big-big.jpg')",
           }}
         ></div>
         <div className="w-full p-8 lg:w-1/2">
           <picture>
           <img
-            src="https://media.licdn.com/dms/image/D4D0BAQHhsRoIwd7sAg/company-logo_200_200/0/1683804596890/saraltech_logo?e=1723075200&v=beta&t=7FnrVb61cbwfbbjVQNjF-QJWPZ2rb7x4IvW-VWePDKw"
+            src="https://image.freepik.com/free-vector/pet-care-logo-mascot-template_190190-163.jpg"
             alt="SaralTech"
             className="mx-auto w-32 h-32"
           />

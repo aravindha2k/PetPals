@@ -4,8 +4,7 @@ import Auth from '../Components/Auth'
 const Contact = () => {
   return (
     <div>
-  
-      <Auth />
+Contact
     </div>
   )
 }

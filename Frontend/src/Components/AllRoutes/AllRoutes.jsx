@@ -7,6 +7,7 @@ import { DetailsPage } from "../../Pages/DetailsPage";
 import { PaymentPage } from "../../Pages/PaymentPage";
 import About from "../../Pages/About";
 import NotFoundError from "../NotFoundError";
+import Auth from "../Auth";
 
 const AllRoutes = () => {
   return (
@@ -19,6 +20,8 @@ const AllRoutes = () => {
       <Route path="/detailsPage" element={<DetailsPage />} />
       <Route path="/paymentsPage" element={<PaymentPage />} />
       <Route path="*" element={<NotFoundError />} />
+      <Route path="/login" element={<Auth />} />
+      
     </Routes>
   );
 };

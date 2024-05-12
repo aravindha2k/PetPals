@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="parent">
     <div className="div1">
-      <HeroCarousel />
+     <img className="h-1/2" src="https://dm6g3jbka53hp.cloudfront.net/static-images/pet-banner-tpn-27042024-v2.jpg" alt="" />
     </div>
     <div className="div2">
       <CatSection />

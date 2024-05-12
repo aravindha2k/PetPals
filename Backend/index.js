@@ -6,7 +6,7 @@ const { petRouter } = require("./Routes/petRouter");
 const {connection} = require("./config/connectDb")
 
 require("dotenv").config();
-app.use(cors());
+
 
 const app = express();
 app.use(express.json());
