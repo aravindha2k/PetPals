@@ -8,6 +8,7 @@ import { PaymentPage } from "../../Pages/PaymentPage";
 import About from "../../Pages/About";
 import NotFoundError from "../NotFoundError";
 import Thankyou from "../../Pages/Thankyou";
+import SinglePetCard from "../pets/SinglePetCard";
 
 const AllRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/pets" element={<Pets />} />
+      <Route path="/pets/:id" element={<SinglePetCard />} />
       <Route path="/Services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/detailsPage/:id" element={<DetailsPage />} />
