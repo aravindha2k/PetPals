@@ -25,9 +25,49 @@ petRouter.post("/insertmany", async(req,res)=>{
 })
 
 petRouter.get("/data", async(req,res)=>{
+    // console.log(req.query);
+    const { q, gender, age, color, sortBy, breed, sortOrder, page, limit, species } = req.query
+
+    const filter = {}
+
+    // if (q) {
+    //     filter.$or = [
+    //         { gender: { $regex: q, $options: "i" } },
+    //         { color: { $regex: q, $options: "i" } },
+    //     ];
+    // }
+
+    if (gender) {
+        filter.gender = gender;
+    }        
+    if (age) {
+        filter.age = age;
+    }
+    if (color) {
+        filter.color = { $in: color };
+    }
+    if (species) {
+        filter.species = { $regex: species, $options: "i" };
+    }
+    
     try {
-        const pets = await petModel.find();
+        // console.log(req.query);
+        // console.log(filter);
+        const pets = await petModel.find(filter);
         res.status(200).json({error:false, data:pets})
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error:true, msg:error})
+    }
+})
+
+petRouter.get("/data/:id", async(req,res)=>{
+    try {
+        const singlePet = await petModel.find({_id: req.params.id});
+        if(!singlePet){
+            return res.status(404).json({error:true, msg:"pet not found"})
+        }
+        res.status(200).json({error:false, data:singlePet})
     } catch (error) {
         console.error(error);
         res.status(500).json({error:true, msg:error})
