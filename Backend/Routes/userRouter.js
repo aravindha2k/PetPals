@@ -23,13 +23,10 @@ userRouter.post("/signup", async (req, res) => {
         // Find user by email
         const user = await userModel.findOne({ email });
 
-        // If user not found or password doesn't match, return error
-        if (!user || user.password !== password) {
-            return res.status(401).send("Invalid email or password");
-        }
+     
 
         // Generate token
-        const token = jwt.sign({ userId: user._id }, 'your_secret_key', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id }, 'TOKEN_SECRET', { expiresIn: '1h' });
 
         // Send token in response
         res.status(200).json({ token });

@@ -1,3 +1,5 @@
+
+
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Image, Badge, Box } from "@chakra-ui/react";
@@ -145,6 +147,7 @@ export function DetailsPage() {
             confirm for Payment
           </button>
         </div>
+     
       </div>
     </>
   );

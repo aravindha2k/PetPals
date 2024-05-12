@@ -8,8 +8,8 @@ import { PaymentPage } from "../../Pages/PaymentPage";
 import About from "../../Pages/About";
 import NotFoundError from "../NotFoundError";
 import Thankyou from "../../Pages/Thankyou";
+import Auth from "../Auth";
 import SinglePetCard from "../pets/SinglePetCard";
-
 const AllRoutes = () => {
   return (
     <Routes>
@@ -23,6 +23,8 @@ const AllRoutes = () => {
       <Route path="/paymentsPage" element={<PaymentPage />} />
       <Route path="/thankyou" element={<Thankyou />} />
       <Route path="*" element={<NotFoundError />} />
+      <Route path="/login" element={<Auth />} />
+      
     </Routes>
   );
 };
