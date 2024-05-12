@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import axios from "axios"
 import { useDispatch, useSelector } from 'react-redux'
 import { Box, Button, Center, Flex, Spinner, Stack, Text } from '@chakra-ui/react'
 import { fetchPets } from "../../redux/actions/actions"
@@ -33,13 +32,16 @@ const PetsList = ()=>{
     }
     return description;
   };
-  // if(loading){
-  //   return <Spinner />
-  // }
 
-  // if(error){
-  //   return <Text color="red">{error}</Text>
-  // }
+  if(error){
+    return (
+      <Center>
+        <Text color = "red" fontSize={{ base: "xs", sm: "sm", md: "md" }} mt={2}>
+              {error}
+        </Text>
+      </Center>
+    )
+  }
 
   return(
     <>
@@ -76,7 +78,6 @@ const PetsList = ()=>{
           ))}
         </Stack>
       )}
-    
     </>
   )
 }

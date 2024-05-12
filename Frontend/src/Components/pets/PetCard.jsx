@@ -15,7 +15,7 @@ const petCard = ({pet, truncateDescription}) => {
         <Flex direction={["column"]} height="40%">
           <Image
             src={pet.image}
-            height="100px"
+            height="130px"
             objectFit="contain"
             // onClick={handleProductClick}
           />
@@ -31,19 +31,6 @@ const petCard = ({pet, truncateDescription}) => {
             <Text fontSize={{ base: "xs", sm: "sm", md: "md" }} mt={2}>
               {truncateDescription(pet.about)}
             </Text>
-            {/* <Center mt={2}>
-              {[...Array(4)].map((_, index) => (
-                <FontAwesomeIcon
-                  key={index}
-                  icon={faStar}
-                  style={{ color: "#FFD43B" }}
-                />
-              ))}
-              <FontAwesomeIcon
-                icon={faStarHalfAlt}
-                style={{ color: "#FFD43B" }}
-              />
-            </Center> */}
             <Flex
               direction="column"
               alignItems="center"
@@ -86,14 +73,13 @@ const petCard = ({pet, truncateDescription}) => {
               colorScheme="aliceblue"
               color = "black"
               bgColor={"blue.500"}
-              _hover={{bgColor : "yellow.600", color : "aliceblue"}}
+              _hover={{bgColor : "blue.600", color : "aliceblue"}}
               border = {"1px solid yellowgreen"}
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
               // onClick={handleCart}
             >
-              {/* <FontAwesomeIcon  style={{color: "#FFD43B", marginRight : "5px"}} />  */}
                View More
             </Button>
             <Button
@@ -106,7 +92,6 @@ const petCard = ({pet, truncateDescription}) => {
               p={{ base: "none", sm: 3 }}
               // onClick={handleBuy}
             >
-              {/* <FontAwesomeIcon  style={{color: "#63E6BE", marginRight : "5px"}} />  */}
               Adpot Pet
             </Button>
           </Flex>
