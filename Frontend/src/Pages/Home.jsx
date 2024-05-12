@@ -1,9 +1,9 @@
-import React from 'react'
+
 
 
 import CatSection from '../AllCard/CatSection/CatSection'
 import DogSection from '../AllCard/DogSection/DogSection'
-import HeroCarousel from '../AllCard/HeroCoursel/HeroCarousel'
+
 
 const Home = () => {
   return (

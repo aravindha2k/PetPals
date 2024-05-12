@@ -26,6 +26,17 @@ serviceRouter.get("/services", async (req, res) => {
   }
 });
 
+
+serviceRouter.get("/services/:id", async (req, res) => {
+  try {
+    const services = await serviceModel.find({_id:req.params.id});
+    return res.status(200).json({ error: false, items: services });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: true, msg: "Unable to get services" });
+  }
+});
+
 // Update a service
 serviceRouter.patch("/service/:id", async (req, res) => {
   try {

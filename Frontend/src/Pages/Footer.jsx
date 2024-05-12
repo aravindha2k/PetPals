@@ -1,6 +1,6 @@
-import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+
 const Footer = () => {
   return (
     <div className="bg-gradient-to-r from-indigo-800 via-indigo-900 to-purple-900 flex justify-center text-white ">
