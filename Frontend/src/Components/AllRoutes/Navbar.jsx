@@ -2,6 +2,7 @@
 import { Disclosure,  } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -17,17 +18,12 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const navigate = useNavigate();
-  
-  
+  const toast = useToast()
   const handleLoginButton = () => {
     navigate("/login");
   };
 
-  const handleLogoutButton = () => {
-    localStorage.clear();
-    window.location.reload();
-  };
-
+ 
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -72,8 +68,20 @@ export default function Navbar() {
                 </button>
                 <button
                   type="button"
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4"
-                  onClick={handleLogoutButton}
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded m-4"
+                  onClick={() => {
+                    localStorage.clear();
+                    toast({
+                      title: 'Logged Out',
+                      status: 'success',
+                      duration: 2000,
+                      isClosable: true,
+                    })
+                    navigate("/logout")
+                    
+                    
+                    // window.location.reload();
+                  }}
                 >
                   Logout
                 </button>

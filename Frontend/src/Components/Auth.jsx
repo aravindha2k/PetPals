@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useToast } from "@chakra-ui/react";
+import { useContext, useEffect, useState } from "react";
 import {useNavigate} from 'react-router-dom';
+import { AuthContext } from "../contexts/AuthContextApi";
+
 export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const[username,setUsername]=useState("");
-
+  const toast = useToast()
+  // const[admin, setAdmin] = useState("");
+  const{isAdmin, setIsAdmin} = useContext(AuthContext)
 
   const [isSignUp, setIsSignup] = useState(true);
  const navigate=useNavigate();
@@ -29,7 +34,15 @@ export default function Auth() {
           }
           return res;
         })
-        .then(() => alert("Register Successfully"))
+        .then(() => {
+          toast({
+            title: 'user Registered successfully',
+            description: "You can login with these credentials",
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+          })
+        })
         .catch((err) => alert(err));
     } else {
       fetch("http://localhost:3000/user/login", {
@@ -46,15 +59,38 @@ export default function Auth() {
           if (res.ok) {
             return res.json();
           } else {
+            toast({
+              title: 'login failed',
+              description: "enter correct credentials",
+              status: 'error',
+              duration: 2000,
+              isClosable: true,
+            })
             throw new Error("Login failed");
           }
         })
         .then((data) => {
           const token = data.token;
-
-          localStorage.setItem("token", token);
+          if(email == "admin@gmail.com" && password == "admin@123"){
+            localStorage.setItem("token", JSON.stringify({token: token, isAdmin: true, isUser: false}));
+            setIsAdmin(true)
+          }
+          else{
+            localStorage.setItem("token", JSON.stringify({token: token, isAdmin: false, isUser: true}));
+            setIsAdmin(false)
+          }
           console.log("Token:", token);
-          navigate("/");
+          toast({
+            title: 'Login Successful',
+            status: 'success',
+            duration: 2000,
+            isClosable: true,
+          })
+          setTimeout(() => {
+            navigate('/')
+            // window.location.reload();
+          }, 1000);
+          
         })
         .catch((err) => {
           console.error("Fetch error:", err);
@@ -62,6 +98,8 @@ export default function Auth() {
        
     }
   };
+
+ 
 
   return (
     <div className="py-6">

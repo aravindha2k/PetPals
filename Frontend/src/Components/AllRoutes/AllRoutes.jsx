@@ -13,10 +13,28 @@ import AdoptPet from '../../Pages/AdoptPet'
 import PrivateRoute from "./PrivateRoute";
 import ContactUs from "../../Pages/Contact";
 import Thanks from "../../Pages/Thanks";
+import DashBoard from "../../Pages/admin/DashBoard";
+import { useEffect, useState } from "react";
+import Logout from "../Logout";
 
 const AllRoutes = () => {
+  const [isAdmin, setAdmin] = useState("");
+  const token = localStorage.getItem("token")
+  const tokenobj = JSON.parse(token)
+  // console.log(tokenobj.isAdmin);
+  useEffect(()=>{
+    setAdmin(tokenobj? tokenobj.isAdmin : "")
+  },[])
+
   return (
-    <Routes>
+    <>
+    {tokenobj && tokenobj.isAdmin ? (
+      <Routes>
+          <Route path="/" element={<DashBoard />} />
+          <Route path="/logout" element={<Logout />} />
+      </Routes>
+    ):(
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/pets" element={<Pets />} />
@@ -54,9 +72,13 @@ const AllRoutes = () => {
       <Route path="/thanks" element={<Thanks />} />
       <Route path="/thankyou" element={<Thankyou />} />
       <Route path="/login" element={<Auth />} />
+      <Route path="/logout" element={<Logout />} />
+
       <Route path="*" element={<NotFoundError />} />
       
-    </Routes>
+    </Routes> 
+    )}
+  </>
   );
 };
 
