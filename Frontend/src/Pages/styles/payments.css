@@ -10,7 +10,7 @@ body{
 
 #main-container{
     /* border: 5px solid white; */
-    background: linear-gradient(135deg, hsl(210, 40%, 57%) 9%, hsl(211,31%,27%,1)75%);
+    background-color: rgb(208,219,231);
 
 
 
@@ -21,15 +21,15 @@ body{
   justify-content: center;
   align-items: center;
   padding:25px;
-  background: linear-gradient(135deg, hsl(210,31%,48%,1) 9%, hsl(211,31%,27%,1)82%);
+  background-color: rgb(208,219,231);
 }
 
 .container form{
   padding:20px;
   width:700px;
   background: #fff;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
-}
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
 
 .container form .row{
   display: flex;
@@ -85,6 +85,7 @@ body{
 }
 
 .container form .submit-btn{
+  border-radius: 10px;
   width: 100%;
   padding:12px;
   font-size: 17px;

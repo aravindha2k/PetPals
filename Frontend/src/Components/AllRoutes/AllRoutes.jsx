@@ -11,6 +11,7 @@ import Thankyou from "../../Pages/Thankyou";
 import Auth from "../Auth";
 import SinglePetCard from "../pets/SinglePetCard";
 import AdoptPet from '../../Pages/AdoptPet'
+import Thanks from "../../Pages/Thanks";
 
 const AllRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AllRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/detailsPage/:id" element={<DetailsPage />} />
       <Route path="/paymentsPage" element={<PaymentPage />} />
+      <Route path="/thanks" element={<Thanks />} />
       <Route path="/thankyou" element={<Thankyou />} />
       <Route path="*" element={<NotFoundError />} />
       <Route path="/login" element={<Auth />} />

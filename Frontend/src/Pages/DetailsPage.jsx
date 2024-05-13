@@ -1,10 +1,8 @@
-
-
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Image, Badge, Box } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
-import "../App.css";
+import "./styles/servicePage.css";
 
 import axios from "axios";
 
@@ -48,6 +46,7 @@ export function DetailsPage() {
             <span id="totalitem"></span>
           </h1>
           <Box
+          id="main-box"
             display="grid"
             gridTemplateColumns="40% 1fr"
             w="auto"
@@ -55,31 +54,39 @@ export function DetailsPage() {
             overflow="hidden"
           >
             <Image
+            id="petImage"
               borderRadius="50%"
               marginTop="1px"
               p="2px"
               h="180px"
-              w="180px"
+              w="250px"
               src={data && data.serviceImg}
               alt={data && data.serviceName}
+              
             />
-            <Box p="1px">
+            
+            <Box p="5px"
+             id="pet-container"
+
+            
+            >
               <Box display="flex" alignItems="baseline">
                 <Badge borderRadius="full" px="2" colorScheme="teal">
                   New
                 </Badge>
                 <Box
-                  color="gray.500"
-                  fontWeight="semibold"
-                  letterSpacing="wide"
-                  fontSize="xs"
-                  textTransform="uppercase"
-                  ml="2"
-                >
-                  {/* {data?.beds} beds &bull; {data?.bathrooms} baths */}
-                </Box>
+                w="100%"
+                mt="1"
+                ml='10px'
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                noOfLines={1}
+              >
+                {data?.serviceName}
               </Box>
-              <Box
+              </Box>
+              {/* <Box
                 w="100%"
                 mt="1"
                 fontWeight="semibold"
@@ -88,7 +95,7 @@ export function DetailsPage() {
                 noOfLines={1}
               >
                 {data?.serviceName}
-              </Box>
+              </Box> */}
               <Box>
                 {data?.serviceDescription}
                 <Box as="span" color="gray.600" fontSize="sm"></Box>
@@ -147,7 +154,6 @@ export function DetailsPage() {
             confirm for Payment
           </button>
         </div>
-     
       </div>
     </>
   );

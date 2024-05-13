@@ -1,13 +1,25 @@
 import "./styles/payments.css";
 import card_images from "../assets/card_img.png";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 export const PaymentPage = () => {
+  const toast = useToast()
+
   // const data = useLocation().state;
   // console.log(data);
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/thankyou");
+    toast({
+      title: 'Payment Successfull.🤗',
+      description: "Service has been booked!",
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+
+    navigate("/thanks");
+
   };
   return (
     <>
@@ -52,7 +64,7 @@ export const PaymentPage = () => {
             </div>
             <div className="inputBox">
               <span>name on card :</span>
-              <input type="text" placeholder="mr. john deo" />
+              <input type="text" placeholder="mr. ravi mishra" />
             </div>
             <div className="inputBox">
               <span>credit card number :</span>
