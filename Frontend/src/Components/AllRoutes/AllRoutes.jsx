@@ -12,6 +12,7 @@ import SinglePetCard from "../pets/SinglePetCard";
 import AdoptPet from '../../Pages/AdoptPet'
 import PrivateRoute from "./PrivateRoute";
 import ContactUs from "../../Pages/Contact";
+import Thanks from "../../Pages/Thanks";
 
 const AllRoutes = () => {
   return (
@@ -50,6 +51,7 @@ const AllRoutes = () => {
           <PaymentPage />
         </PrivateRoute>} 
       />
+      <Route path="/thanks" element={<Thanks />} />
       <Route path="/thankyou" element={<Thankyou />} />
       <Route path="/login" element={<Auth />} />
       <Route path="*" element={<NotFoundError />} />

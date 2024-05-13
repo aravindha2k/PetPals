@@ -11,6 +11,8 @@ import {
   Flex,
   Stack,
 } from "@chakra-ui/react";
+import "./styles/servicesPage.css";
+
 import { useNavigate } from "react-router-dom";
 import "./styles/servicePage.css"
 
@@ -65,7 +67,7 @@ export function Services() {
   return (
     <>
       {/* <Stack bg='rgb(208,219,231)'> */}
-      <Stack bg="hsl(212,28%,24%)">
+      <Stack className="main-conation007">
         {/* <Flex mt="4" justifyContent="center"> */}
           {/* <Text fontSize="20px" p={1} fontWeight="bold">Pages : </Text> */}
           {/* <Text fontSize="20px" p={1} fontWeight="bold"> */}
@@ -112,8 +114,9 @@ export function Services() {
         >
           {currentService.map((service) => (
             <Card
+            className="main-card"
               key={service._id}
-              bg="hsl(220,13%,18%)"
+              // bg="hsl(212,33%,32%)"
               boxShadow="0px 2px 5px -1px rgba(255, 255, 255, 0.25), 0px 1px 3px -1px rgba(255, 255, 255, 0.3)"
               //  borderWidth="1px"
               // overflow="hidden"
@@ -154,13 +157,14 @@ export function Services() {
                 <Button
                 onClick={()=>{
                 handleNavigate(service._id)}}
+                className="main-button"
                   w="100%"
                   borderRadius="10px"
                   color="rgb(245,247,250)"
-                  bg="hsl(210,31%,48%)"
-                  _hover={{ bg: "hsl(213,32%,29%)" }}
+                  bg="hsl(240,6%,10%)"
+                  _hover={{ bg: "hsl(280,10%,20%)" }}
                 >
-                  Confirm for Payment
+                  Book Service
                 </Button>
               </CardFooter>
             </Card>
