@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../../Pages/Home";
-import Contact from "../../Pages/Contact";
 import Pets from "../../Pages/Pets";
 import { Services } from "../../Pages/ServicePage";
 import { DetailsPage } from "../../Pages/DetailsPage";
@@ -12,6 +11,7 @@ import Auth from "../Auth";
 import SinglePetCard from "../pets/SinglePetCard";
 import AdoptPet from '../../Pages/AdoptPet'
 import PrivateRoute from "./PrivateRoute";
+import ContactUs from "../../Pages/Contact";
 
 const AllRoutes = () => {
   return (
@@ -35,7 +35,7 @@ const AllRoutes = () => {
         </PrivateRoute>} 
       />
       <Route path="/Services" element={<Services />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/contact" element={<ContactUs />} />
       <Route 
       path="/detailsPage/:id" 
       element={
