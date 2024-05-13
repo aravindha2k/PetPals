@@ -5,7 +5,6 @@ const { serviceRouter } = require("./Routes/serviceRouter");
 const { petRouter } = require("./Routes/petRouter");
 const {connection} = require("./config/connectDb")
 
-require("dotenv").config();
 
 
 const app = express();

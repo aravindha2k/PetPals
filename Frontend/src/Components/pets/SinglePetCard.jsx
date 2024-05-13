@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchSinglePets } from '../../redux/actions/actions';
 import { Box, Heading, Text, Image, Center, Spinner, Badge, Flex, Icon, Button } from '@chakra-ui/react';
 import { FaDog } from 'react-icons/fa';
@@ -9,13 +9,16 @@ const SinglePetCard = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const { loading, pets, error } = useSelector(state => state.pets);
+    const navigate = useNavigate();
+    const pet = pets[0]
+    // console.log(pets[0]);
 
     useEffect(() => {
         dispatch(fetchSinglePets(id));
     }, []);
 
     const handleAdoptClick = ()=>{
-        
+        navigate('/adoptPet',{state:pet});
     }
 
     if (error) {
