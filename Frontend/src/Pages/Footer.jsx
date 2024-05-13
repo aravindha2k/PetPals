@@ -1,5 +1,6 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -250,7 +251,7 @@ const Footer = () => {
             </span>
           </div>
           <div className="w-8 h-8 border-black border-2 rounded-full">
-            <FontAwesomeIcon icon="fa-brands fa-facebook" />
+            <FontAwesomeIcon  icon={faFacebook} />
           </div>
         </div>
       </div>
