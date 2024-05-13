@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  {  useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import "./styles/adoptPet.css"
 import { useToast } from '@chakra-ui/react';
@@ -34,7 +34,7 @@ const AdoptPet = () => {
   const postAdoption = async()=>{
     try {
       const res = await axios.post('http://localhost:3000/adopt/create', state);
-      console.log('Adoption successful:', response.data);
+      console.log('Adoption successful:', res.data);
       toast({
         title: 'Pet Adopted Successfully! Thanks for adopting',
         status: 'success',

@@ -10,6 +10,7 @@ import NotFoundError from "../NotFoundError";
 import Thankyou from "../../Pages/Thankyou";
 import Auth from "../Auth";
 import SinglePetCard from "../pets/SinglePetCard";
+import AdoptPet from "../../Pages/AdoptPet";
 
 
 

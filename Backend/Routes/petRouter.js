@@ -31,12 +31,7 @@ petRouter.get("/data",  async(req,res)=>{
 
     const filter = {}
 
-    // if (q) {
-    //     filter.$or = [
-    //         { gender: { $regex: q, $options: "i" } },
-    //         { color: { $regex: q, $options: "i" } },
-    //     ];
-    // }
+  
 
     if (gender) {
         filter.gender = gender;

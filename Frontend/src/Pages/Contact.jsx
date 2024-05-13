@@ -1,9 +1,10 @@
+import PetsList from "../Components/pets/PetsList"
 
 
 const Contact = () => {
   return (
     <div>
-Contact
+<PetsList />
     </div>
   )
 }

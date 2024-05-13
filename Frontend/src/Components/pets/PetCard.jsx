@@ -1,8 +1,6 @@
 import { Box, Button, Card, Center, Divider, Flex, Heading, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+
 import {useNavigate} from 'react-router-dom'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBagShopping, faCartShopping, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons";
 
 const petCard = ({pet, truncateDescription}) => {
   const navigate = useNavigate()
