@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import "./styles/adoptPet.css"
 import { useToast } from '@chakra-ui/react';
 import axios from 'axios';
 
 const AdoptPet = () => {
   const data = useLocation().state;
-
+  const navigate = useNavigate();
   const initialState = {
     petId: data._id,
     petName: data.name,
@@ -24,23 +24,23 @@ const AdoptPet = () => {
 
   const toast = useToast()
   const [state, setState] = useState(initialState);
-  // console.log(state);
   // console.log(data);
 
-  // useEffect(()=>{
-  //   console.log(state);
-  // },[])
+  useEffect(()=>{
+    console.log(state);
+  },[])
 
   const postAdoption = async()=>{
     try {
       const res = await axios.post('http://localhost:3000/adopt/create', state);
-      console.log('Adoption successful:', response.data);
+      console.log('Adoption successful:', res.data);
       toast({
         title: 'Pet Adopted Successfully! Thanks for adopting',
         status: 'success',
         duration: 3000,
         isClosable: true,
       });
+      navigate("/thankyou");
     } catch (error) {
       console.error('Error adopting pet:', error);
       toast({

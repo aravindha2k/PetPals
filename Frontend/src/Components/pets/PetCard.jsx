@@ -11,6 +11,10 @@ const petCard = ({pet, truncateDescription}) => {
     navigate(`/pets/${pet._id}`)
   }
 
+  const handleAdoptClick = ()=>{
+    navigate('/adoptPet',{state:pet});
+}
+
   return (
     <Box
       width={{ base: "100%", sm: "43%", md: "47%", lg: "31%" }}
@@ -92,7 +96,7 @@ const petCard = ({pet, truncateDescription}) => {
               flex={{ base: "100%", sm: "1" }}
               margin={{ base: "5px 0", sm: "5px" }}
               p={{ base: "none", sm: 3 }}
-              // onClick={handleBuy}
+              onClick={handleAdoptClick}
             >
             Adopt Pet
             </Button>
