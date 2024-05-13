@@ -1,5 +1,6 @@
 const express = require("express");
 const { petModel } = require("../AllSchema/petModel");
+const {auth} = require("../middlewares/auth.middleware")
 
 const petRouter = express.Router();
 
@@ -24,7 +25,7 @@ petRouter.post("/insertmany", async(req,res)=>{
     }
 })
 
-petRouter.get("/data", async(req,res)=>{
+petRouter.get("/data",  async(req,res)=>{
     // console.log(req.query);
     const { q, gender, age, color, sortBy, breed, sortOrder, page, limit, species } = req.query
 

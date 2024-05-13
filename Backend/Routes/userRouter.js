@@ -3,9 +3,14 @@ const { userModel } = require('../AllSchema/userSchema');
 const userRouter=express.Router()
 var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+require("dotenv").config();
 
 userRouter.post("/signup", async (req, res) => {
     const{email,username,password}=req.body;
+    const user = await userModel.findOne({ email });
+    if(user){
+      return res.status(500).json({error:true, msg:"user already exist. Please Login"})
+    }
     const saltRound=10;
     try {
         const hashedPass=await bcrypt.hash(password,saltRound);
@@ -26,7 +31,7 @@ userRouter.post("/signup", async (req, res) => {
      
 
         // Generate token
-        const token = jwt.sign({ userId: user._id }, 'TOKEN_SECRET', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
 
         // Send token in response
         res.status(200).json({ token });
