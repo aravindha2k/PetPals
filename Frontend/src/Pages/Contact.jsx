@@ -13,8 +13,6 @@ const ContactUsPage = () => {
   };
 
   const handleSubmit = () => {
-    // Perform form submission logic here (e.g., send form data to backend, reset form fields)
-    // For demonstration purposes, show success toast
     toast({
       title: 'Message Sent Successfully!',
       description: 'Thank you for contacting us. We will get back to you soon.',
