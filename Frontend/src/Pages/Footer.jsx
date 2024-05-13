@@ -1,257 +1,208 @@
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <div className="bg-gradient-to-r from-indigo-800 via-indigo-900 to-purple-900 flex justify-center text-white ">
-      <div className=" w-3/4 flex justify-center   ">
-        <div className="flex-1 w-full md:w-1/2 lg:w-1/4 px-4 ">
-          <br />
-          <br />
-          <h5 className="text-lg text-green-400">The PetNext</h5>
-
+    <div className="bg-gradient-to-r from-indigo-800 via-indigo-900 to-purple-900 py-10">
+      <div className="container mx-auto flex flex-wrap justify-between text-white font-serif">
+        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+          <h5 className="text-lg text-green-400 mb-4">The PetNext</h5>
           <div>
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Blog
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Career
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Support
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                About us
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Stores
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Online Pet Shop
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Buy Membership
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Customer reviews
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Report Animal Abuse
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Download Mobile App
-              </a>
-              <br />
-              <br />
-            </span>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Career
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Support
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              About us
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Pet Stores
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Online Pet Shop
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Buy Membership
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Customer reviews
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Report Animal Abuse
+            </a>
           </div>
         </div>
-        <div className="flex-1 ">
-          <br />
-          <br />
-          <h5 className="text-lg text-green-400">Home Services</h5>
-
+        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+          <h5 className="text-lg text-green-400 mb-4">Home Services</h5>
           <div>
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Grooming
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Dog Training
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Home Vet Visit
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Relocation
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Insurance
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Dog Training Course
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Boarding & Siting
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Online Vet Consultation
-              </a>
-            </span>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Pet Grooming
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Dog Training
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Dog Walking
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Home Vet Visit
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Pet Relocation
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Pet Insurance
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Dog Training Course
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Pet Boarding & Siting
+            </a>
           </div>
         </div>
-        <div className="flex-1 w-full md:w-1/2 lg:w-1/4 px-4 ">
-          <br />
-          <br />
-          <h2 className="text-lg text-green-400">Partner</h2>
-
+        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+          <h5 className="text-lg text-green-400 mb-4">Partner</h5>
           <div>
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Become a Groomer
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Become a Trainer
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Become a Dog Walker
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Become a Pet Boarder
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Grooming Course
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Pet Store Franchise
-              </a>
-            </span>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Become a Groomer
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Become a Trainer
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Become a Dog Walker
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Become a Pet Boarder
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Pet Gromming Course
+            </a>
           </div>
         </div>
-        <div className="flex-1 w-full md:w-1/2 lg:w-1/4 px-4 ">
-          <br />
-          <br />
-          <h5 className="text-lg text-green-400">Policy</h5>
+        <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
+          <h5 className="text-lg text-green-400 mb-4">Policy</h5>
           <div>
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Privacy Policy
-              </a>
-            </span>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Refund Policy
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Cancellation Policy
+            </a>
+            <a
+              href="#"
+              className="hover:text-blue-300 hover:underline block mb-2"
+            >
+              Terms & Conditions
+            </a>
           </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Refund Policy
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Cancellation Policy
-              </a>
-            </span>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <a href="#" className="hover:text-blue-300 hover:underline">
-                Terms & Condition
-              </a>
-            </span>
-          </div>
-          <div className="w-8 h-8 border-black border-2 rounded-full">
-            <FontAwesomeIcon  icon={faFacebook} />
+          <div className="flex mt-4">
+            <a
+              href="#"
+              className="w-8 h-8 border-black border-2 rounded-full flex items-center justify-center mr-4"
+            >
+              <FontAwesomeIcon icon={faFacebook} className="text-white" />
+            </a>
+            <a
+              href="#"
+              className="w-8 h-8 border-black border-2 rounded-full flex items-center justify-center mr-4"
+            >
+              <FontAwesomeIcon icon={faTwitter} className="text-white" />
+            </a>
+            <a
+              href="#"
+              className="w-8 h-8 border-black border-2 rounded-full flex items-center justify-center"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="text-white" />
+            </a>
           </div>
         </div>
       </div>

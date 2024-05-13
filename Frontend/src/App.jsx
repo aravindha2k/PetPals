@@ -11,10 +11,10 @@ function App() {
   return (
     <>
       <div className="fixed top-0 w-full z-50">
-      
-      </div>
       <Navbar />
-      <AllRoutes />
+      </div>
+     
+      <div className="pt-16"><AllRoutes /></div>
       <Footer />
     </>
   );
