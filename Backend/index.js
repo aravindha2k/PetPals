@@ -3,7 +3,8 @@ const cors = require("cors")
 const userRouter = require("./Routes/userRouter");
 const { serviceRouter } = require("./Routes/serviceRouter");
 const { petRouter } = require("./Routes/petRouter");
-const {connection} = require("./config/connectDb")
+const {connection} = require("./config/connectDb");
+const { adoptionRouter } = require("./Routes/adoptionRouter");
 
 
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 
 app.use("/user",userRouter)
 app.use("/pet", petRouter)
+app.use("/adopt", adoptionRouter)
 app.use("/service",serviceRouter)
 
 
