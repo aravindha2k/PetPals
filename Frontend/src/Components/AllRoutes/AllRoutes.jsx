@@ -11,6 +11,7 @@ import Thankyou from "../../Pages/Thankyou";
 import Auth from "../Auth";
 import SinglePetCard from "../pets/SinglePetCard";
 import AdoptPet from '../../Pages/AdoptPet'
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
   return (
@@ -18,15 +19,40 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/pets" element={<Pets />} />
-      <Route path="/pets/:id" element={<SinglePetCard />} />
-      <Route path="/adoptPet" element={<AdoptPet />} />
+      <Route 
+      path="/pets/:id" 
+      element={
+        <PrivateRoute>
+          <SinglePetCard />
+        </PrivateRoute>
+      } 
+      />
+      <Route 
+      path="/adoptPet" 
+      element={
+        <PrivateRoute>
+          <AdoptPet/>
+        </PrivateRoute>} 
+      />
       <Route path="/Services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/detailsPage/:id" element={<DetailsPage />} />
-      <Route path="/paymentsPage" element={<PaymentPage />} />
+      <Route 
+      path="/detailsPage/:id" 
+      element={
+        <PrivateRoute>
+          <DetailsPage />
+        </PrivateRoute>} 
+      />
+      <Route 
+      path="/paymentsPage" 
+      element={
+        <PrivateRoute>
+          <PaymentPage />
+        </PrivateRoute>} 
+      />
       <Route path="/thankyou" element={<Thankyou />} />
-      <Route path="*" element={<NotFoundError />} />
       <Route path="/login" element={<Auth />} />
+      <Route path="*" element={<NotFoundError />} />
       
     </Routes>
   );

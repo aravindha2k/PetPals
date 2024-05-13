@@ -24,7 +24,6 @@ const AdoptPet = () => {
 
   const toast = useToast()
   const [state, setState] = useState(initialState);
-  // console.log(state);
   // console.log(data);
 
   // useEffect(()=>{
