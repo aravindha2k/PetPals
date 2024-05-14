@@ -71,16 +71,7 @@ export default function Navbar() {
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded m-4"
                   onClick={() => {
                     localStorage.clear();
-                    toast({
-                      title: 'Logged Out',
-                      status: 'success',
-                      duration: 2000,
-                      isClosable: true,
-                    })
                     navigate("/logout")
-                    
-                    
-                    // window.location.reload();
                   }}
                 >
                   Logout

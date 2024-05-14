@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors())
 
 app.get("/", (req, res) => {
-  res.send("this is home");
+  res.send("this is home and Server is running successfully");
 });
 
 app.use("/user",userRouter)

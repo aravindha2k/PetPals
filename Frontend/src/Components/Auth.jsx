@@ -20,7 +20,7 @@ export default function Auth() {
   
 
     if (isSignUp) {
-      fetch("http://localhost:3000/user/signup", {
+      fetch("https://petpals-1-pa4p.onrender.com/user/signup", {
         headers:{
           "Content-Type":"application/json"
         },
@@ -32,9 +32,6 @@ export default function Auth() {
           if (res.error) {
             throw new Error(res.error);
           }
-          return res;
-        })
-        .then(() => {
           toast({
             title: 'user Registered successfully',
             description: "You can login with these credentials",
@@ -42,10 +39,11 @@ export default function Auth() {
             duration: 2000,
             isClosable: true,
           })
+          return res;
         })
         .catch((err) => alert(err));
     } else {
-      fetch("http://localhost:3000/user/login", {
+      fetch("https://petpals-1-pa4p.onrender.com/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,11 +71,11 @@ export default function Auth() {
           const token = data.token;
           if(email == "admin@gmail.com" && password == "admin@123"){
             localStorage.setItem("token", JSON.stringify({token: token, isAdmin: true, isUser: false}));
-            setIsAdmin(true)
+            setIsAdmin(true) //setting the admin value to true and putting this admin value in App parent component only then app component rerenders and allroutes get updated and get admin routes without reloading the browser
           }
           else{
             localStorage.setItem("token", JSON.stringify({token: token, isAdmin: false, isUser: true}));
-            setIsAdmin(false)
+            setIsAdmin(false) //setting the admin value to true and putting this admin value in App parent component only then app component rerenders and allroutes get updated and get user routes without reloading the browser
           }
           console.log("Token:", token);
           toast({
@@ -86,10 +84,7 @@ export default function Auth() {
             duration: 2000,
             isClosable: true,
           })
-          setTimeout(() => {
-            navigate('/')
-            // window.location.reload();
-          }, 1000);
+          navigate('/')
           
         })
         .catch((err) => {
