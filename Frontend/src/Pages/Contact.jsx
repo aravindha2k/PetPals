@@ -25,7 +25,8 @@ const ContactUsPage = () => {
   };
 
   return (
-    <Container maxW="xl" mt={8}>
+    <Box bg="rgb(208,219,231)">
+    <Container maxW="xl" p={8}>
       <Heading as="h1" mb={4} textAlign="center" color="teal.500">
         Contact Us
       </Heading>
@@ -52,6 +53,7 @@ const ContactUsPage = () => {
         </Box>
       </Flex>
     </Container>
+    </Box>
   );
 };
 
