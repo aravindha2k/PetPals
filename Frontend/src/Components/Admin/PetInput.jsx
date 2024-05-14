@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
+import { addDataPet } from "../../redux/actions/actionsAdmin";
 
 // import { ProdData } from "../../redux/utils/adminUtils";
 // import { addDataProduct } from "../../redux/actions/actionAdmin";
@@ -27,7 +28,7 @@ const PetInput = () => {
   const dispatch = useDispatch();
 
   const addProduct = () => {
-    // dispatch(addDataProduct(updateProduct));
+    dispatch(addDataPet(updatePet));
     console.log(updatePet);
     toast({
       title: 'New Product',
@@ -123,7 +124,10 @@ const PetInput = () => {
           onChange={handleInputChange}
           resize="vertical"
         />
-        <Button onClick={addProduct} colorScheme="blue" leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+        <Button onClick={addProduct}  
+        colorScheme="gray"
+        _hover={{bgColor : "gray.600", color : "aliceblue"}}
+        leftIcon={<FontAwesomeIcon icon={faPlus} />}>
             Add Pet
         </Button>
       </VStack>
