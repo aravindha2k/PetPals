@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Box, Button, Center, Flex, Spinner, Stack, Text } from '@chakra-ui/react'
 import { fetchPets } from "../../redux/actions/actions"
 import PetCard from "./PetCard"
-import '../../styles/petsList.css'
+import '../../Pages/styles/petsList.css'
 
 const PetsList = ()=>{
   const initialState = {

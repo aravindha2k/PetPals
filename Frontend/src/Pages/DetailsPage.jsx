@@ -14,7 +14,7 @@ export function DetailsPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/service/services/${id}`
+          `https://petpals-1-pa4p.onrender.com/service/services/${id}`
         );
         setData(response.data.items[0]);
         console.log(response.data.items[0]);

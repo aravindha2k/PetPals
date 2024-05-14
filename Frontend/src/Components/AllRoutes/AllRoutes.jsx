@@ -18,13 +18,13 @@ import { useEffect, useState } from "react";
 import Logout from "../Logout";
 
 const AllRoutes = () => {
-  const [isAdmin, setAdmin] = useState("");
+  // const [isAdmin, setAdmin] = useState("");
   const token = localStorage.getItem("token")
   const tokenobj = JSON.parse(token)
   // console.log(tokenobj.isAdmin);
-  useEffect(()=>{
-    setAdmin(tokenobj? tokenobj.isAdmin : "")
-  },[])
+  // useEffect(()=>{
+  //   setAdmin(tokenobj? tokenobj.isAdmin : "")
+  // },[])
 
   return (
     <>
