@@ -81,7 +81,7 @@ const PetsList = ()=>{
 
   return(
     <>
-    <div className='petsContainer'>
+    <div className='petsContainer' style={{backgroundColor: "rgb(208,219,231)"}}>
       <div className='filterSection'>
         <div className="filter-item">
             <p>Species</p>

@@ -8,7 +8,6 @@ const PetsAdmin = () => {
       <Heading textAlign={'center'} color={'#637694'} m={5}>Pets</Heading>
       <PetInput/>
 
-
     </Box>
   )
 }

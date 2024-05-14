@@ -19,8 +19,11 @@ const petCard = ({pet, truncateDescription}) => {
       padding="10px"
       marginBottom="10px"
       fontFamily={"Playfair Display"}
+      boxShadow="0px 2px 5px -1px rgba(255, 255, 255, 0.25), 0px 1px 3px -1px rgba(255, 255, 255, 0.3)"
+      // bg="hsl(211,31%,34%)"
+    // background: linear-gradient(135deg, hsl(210, 40%, 57% ) 9%,  hsl(211,31%,27%,1)82%);
     >
-      <Card p={3} height="100%">
+      <Card p={3} height="100%" >
         <Flex direction={["column"]} height="40%">
           <Image
             src={pet.image}
