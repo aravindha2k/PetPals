@@ -13,18 +13,21 @@ function App() {
   const tokenobj = JSON.parse(token) || {}
   const{isAdmin, setIsAdmin} = useContext(AuthContext)
 
-  if(!tokenobj ) return(
-    <>
-    <Navbar/>
-    <AllRoutes/>
-    <Footer />
-    </>
-  )
+  if(!tokenobj ) 
+  {
+    return(
+      <>
+      <Navbar/>
+      <AllRoutes/>
+      <Footer />
+      </>
+    )
+  }
   return (
     <>
     {tokenobj.isAdmin? <AdminNavBar /> : <Navbar/> }
     <AllRoutes/>
-    <Footer />
+    {tokenobj.isAdmin? "" : <Footer />}
     </>
   )
 }

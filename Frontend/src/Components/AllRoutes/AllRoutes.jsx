@@ -16,6 +16,7 @@ import Thanks from "../../Pages/Thanks";
 import DashBoard from "../../Pages/admin/DashBoard";
 import { useEffect, useState } from "react";
 import Logout from "../Logout";
+import PetsAdmin from "../../Pages/admin/PetsAdmin";
 
 const AllRoutes = () => {
   // const [isAdmin, setAdmin] = useState("");
@@ -31,6 +32,7 @@ const AllRoutes = () => {
     {tokenobj && tokenobj.isAdmin ? (
       <Routes>
           <Route path="/" element={<DashBoard />} />
+          <Route path="/petsadmin" element={<PetsAdmin />} />
           <Route path="/logout" element={<Logout />} />
       </Routes>
     ):(
