@@ -17,6 +17,9 @@ import DashBoard from "../../Pages/admin/DashBoard";
 import { useEffect, useState } from "react";
 import Logout from "../Logout";
 import PetsAdmin from "../../Pages/admin/PetsAdmin";
+import AdoptAdmin from "../../Pages/admin/AdoptAdmin";
+import ServiceAdmin from "../../Pages/admin/ServiceAdmin";
+import UsersAdmin from "../../Pages/admin/UsersAdmin";
 
 const AllRoutes = () => {
   // const [isAdmin, setAdmin] = useState("");
@@ -33,7 +36,11 @@ const AllRoutes = () => {
       <Routes>
           <Route path="/" element={<DashBoard />} />
           <Route path="/petsadmin" element={<PetsAdmin />} />
+          <Route path="/adoptadmin" element={<AdoptAdmin />} /> 
+          <Route path="/servicesadmin" element={<ServiceAdmin />} />
+          <Route path="/useradmin" element={<UsersAdmin />} />
           <Route path="/logout" element={<Logout />} />
+
       </Routes>
     ):(
       <Routes>
