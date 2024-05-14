@@ -32,7 +32,7 @@ const AdoptPet = () => {
 
   const postAdoption = async()=>{
     try {
-      const res = await axios.post('http://localhost:3000/adopt/create', state);
+      const res = await axios.post('https://petpals-1-pa4p.onrender.com/adopt/create', state);
       console.log('Adoption successful:', res.data);
       toast({
         title: 'Pet Adopted Successfully! Thanks for adopting',

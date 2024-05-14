@@ -29,7 +29,7 @@ export function Services() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/service/services");
+        const res = await fetch("https://petpals-1-pa4p.onrender.com/service/services");
         const data = await res.json();
         setService(data.items);
         console.log(data.items);
